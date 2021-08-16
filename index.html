@@ -47,6 +47,12 @@
     <p></p>
 
 
+    <section id="known commands">
+        <h1>Bekannt Befehle</h1>
+        <p></p>
+    </section>
+
+
     <section id="commands">
         <h1>Befehle</h1>
         <p>
@@ -255,8 +261,6 @@
         <section id="math index">
             <h1>Index</h1>
             <code>a_1</code>
-            <code>a_{2a}</code>
-            <code>a_{b_{c}}</code>
 
             <p>
                 Wenn sie ein Index verwenden wollen, dann können sie dies mit dem <code>_</code> zeichen erreichen: <code>$a_1$</code> wird zu $a_1$.
@@ -271,26 +275,10 @@
             </p>
         </section>
 
-        <section id="fractions">
-            <h1>Brüche</h1>
-
-            <code>\frac{a}{b}</code>
-            <code>\frac{c}{\frac{a}{b}}</code>
-
-            <p>
-                Sie können Brüche darstellen durch den Befehl <code>$\frac{a}{b}$</code> (das ergibt $\frac{a}{b}$).
-                <br>
-                Sie können auch n-fache Brüche darstellen.
-                Dazu schreiben sie einfach in den Zähler/ Nenner den weiteren Bruch: <code>$\frac{c}{\frac{a}{b}}$</code> ergibt $\frac{c}{\frac{a}{b}}$.
-            </p>
-        </section>
-
         <section id="math potency">
             <h1>Potenzen</h1>
 
             <code>a^b</code>
-            <code>a^{bc}</code>
-            <code>a^{b^c}</code>
 
             <p>
                 Um Potenzen darzustellen können sie einfach die Basis konkatenieren mit dem <code>^</code> Zeichen gefolgt von der Potenz.
@@ -302,6 +290,19 @@
 
             <p>
                 Wollen sie eine mehrfache Potenz darstellen, dann umklammern sie immer die tiefste Potenz: <code>$a^{b^c}$</code> wird zu $a^{b^c}$.
+            </p>
+        </section>
+
+        <section id="fractions">
+            <h1>Brüche</h1>
+
+            <code>\frac{a}{b}</code>
+
+            <p>
+                Sie können Brüche darstellen durch den Befehl <code>$\frac{a}{b}$</code> (das ergibt $\frac{a}{b}$).
+                <br>
+                Sie können auch n-fache Brüche darstellen.
+                Dazu schreiben sie einfach in den Zähler/ Nenner den weiteren Bruch: <code>$\frac{c}{\frac{a}{b}}$</code> ergibt $\frac{c}{\frac{a}{b}}$.
             </p>
         </section>
 
@@ -317,17 +318,209 @@
 
         <section id="math sets">
             <h1>Mengen</h1>
+            <code>M := \{ 1, 2, 3, 4 \}</code>
+            <p>
+                Eine Menge kann recht einfach mit den Standardsymbolen dargestellt werden.
+            </p>
+
+            <section id="math sets operations">
+                <h1>Mengenoperationen</h1>
+
+                <code>\cup</code>
+                <code>\cap</code>
+                <code>\subset</code>
+                <code></code>
+                <code></code>
+
+                <p>
+                    Mengenoperationen sind ebenfalls in $\LaTeX$ definiert.
+                </p>
+
+                <table>
+                    <thead>
+                        <th>Name</th>
+                        <th>Befehl</th>
+                        <th>Symbol</th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Leere Menge</td>
+                        <td><code>\emptyset</code></td>
+                        <td>$\emptyset$</td>
+                    </tr>
+                    <tr>
+                        <td>Mit (|)</td>
+                        <td><code>\mid</code></td>
+                        <td>$\mid$</td>
+                    </tr>
+                    <tr>
+                        <td>Vereinigungsmenge</td>
+                        <td><code>\cup</code></td>
+                        <td>$\cup$</td>
+                    </tr>
+                    <tr>
+                        <td>Schnittmenge</td>
+                        <td><code>\cap</code></td>
+                        <td>$\cap$</td>
+                    </tr>
+                    <tr>
+                        <td>Differenzmenge</td>
+                        <td><code>\setminus</code></td>
+                        <td>$\setminus$</td>
+                    </tr>
+                    <tr>
+                        <td>Teilmenge</td>
+                        <td><code>\subset</code></td>
+                        <td>$\subset$</td>
+                    </tr>
+                    <tr>
+                        <td>Obermenge</td>
+                        <td><code>\supset</code></td>
+                        <td>$\supset$</td>
+                    </tr>
+                    <tr>
+                        <td>Element</td>
+                        <td><code>\in</code></td>
+                        <td>$\in$</td>
+                    </tr>
+                    <tr>
+                        <td>Nicht Element</td>
+                        <td><code>\notin</code></td>
+                        <td>$\notin$</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <p>
+                Eine Tabelle aller Mengenoperationen kann <a href="https://de.wikipedia.org/wiki/Liste_mathematischer_Symbole#Mengenlehre">hier</a> gefunden werden.
+            </p>
         </section>
 
         <section id="math sums">
-            <h1>Summen</h1>
+            <h1>Summe</h1>
+            <code>\sum_{lower}^{upper} i</code>
+
+            <p>
+                Summen können mit dem <code>$\sum_{i=1}^{n} i$</code> Befehl erzeugt werden.
+                Kombinieren sie einfach den Index als untere Grenze mit einer Potenz als obere Grenze $\sum_{i=1}^{n} i$
+            </p>
+        </section>
+
+        <section id="math products">
+            <h1>Produkt</h1>
+            <code>\prod_{lower}^{upper}</code>
+
+            <p>
+                Produkte können mit dem <code>$\prod_{i=1}^{n} i$</code> Befehl erzeugt werden.
+                Kombinieren sie einfach den Index als untere Grenze mit einer Potenz als obere Grenze $\prod_{i=1}^{n} i$
+            </p>
+        </section>
+
+        <section id="math integral">
+            <h1>Integrale</h1>
+            <code>\int_{lower}^{upper}</code>
+
+            <p>
+                Integrale können mit dem <code>$\int_{i=1}^{n} i$</code> Befehl erzeugt werden.
+                Kombinieren sie einfach den Index als untere Grenze mit einer Potenz als obere Grenze $\prod_{i=1}^{n} i$
+            </p>
         </section>
 
         <section id="math matrices">
             <h1>Matrix</h1>
+
+            <b>amsmath</b>
+            <pre>
+<code>
+\begin{pmatrix}
+    a_{0,0} & a_{0,1} & a_{0,2} \\
+    a_{1,0} & a_{1,1} & a_{1,2}
+\end{pmatrix}
+</code>
+            </pre>
+
+            <p>
+                Um Matrizen benutzen zu können müssen sie das <b>amsmath</b> Paket laden.
+                Danach können sie mit dem Block <code>}\$begin{matrix} ... \end{matrix}</code> ihre Matrix definieren.
+                Schreiben sie in den Block die Werte für die Matrix Zeilenweise.
+                Fügen sie ans Ende einer Zeile einen Zeilenumbruch und trennen sie die Werte mit <code>&</code> Zeichen.
+            </p>
+
+            <p>Es Gibt mehrere Arten von Matrizen:</p>
+            <table>
+                <thead>
+                    <th>Name</th>
+                    <th>Code</th>
+                    <th>Ergebnis</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Parentheses</td>
+                        <td><code>\begin{pmatrix}</code></td>
+                        <td>$\begin{pmatrix}
+                                a_{0,0} & a_{0,1} & a_{0,2} \\
+                                a_{1,0} & a_{1,1} & a_{1,2}
+                            \end{pmatrix}$</td>
+                    </tr>
+                    <tr>
+                        <td>Brackets</td>
+                        <td><code>\begin{bmatrix}</code></td>
+                        <td>$\begin{bmatrix}
+                            a_{0,0} & a_{0,1} & a_{0,2} \\
+                            a_{1,0} & a_{1,1} & a_{1,2}
+                            \end{bmatrix}$</td>
+                    </tr>
+                    <tr>
+                        <td>Braces</td>
+                        <td><code>\begin{Bmatrix}</code></td>
+                        <td>$\begin{Bmatrix}
+                            a_{0,0} & a_{0,1} & a_{0,2} \\
+                            a_{1,0} & a_{1,1} & a_{1,2}
+                            \end{Bmatrix}$</td>
+                    </tr>
+                    <tr>
+                        <td>Pipes</td>
+                        <td><code>\begin{vmatrix}</code></td>
+                        <td>$\begin{vmatrix}
+                            a_{0,0} & a_{0,1} & a_{0,2} \\
+                            a_{1,0} & a_{1,1} & a_{1,2}
+                            \end{vmatrix}$</td>
+                    </tr>
+                    <tr>
+                        <td>Double pipes</td>
+                        <td><code>\begin{Vmatrix}</code></td>
+                        <td>$\begin{Vmatrix}
+                            a_{0,0} & a_{0,1} & a_{0,2} \\
+                            a_{1,0} & a_{1,1} & a_{1,2}
+                            \end{Vmatrix}$</td>
+                    </tr>
+                </tbody>
+            </table>
+
         </section>
 
     </section>
+
+</section>
+
+
+<section id="linking">
+    <h1>Verlinkungen</h1>
+    <p></p>
+
+    <section id="citing">
+        <h1>Zitieren</h1>
+    </section>
+
+    <section id="referencing">
+        <h1>Referenzieren</h1>
+    </section>
+
+    <section id="footnotes">
+        <h1>Fußnoten</h1>
+    </section>
+
 </section>
 
 
@@ -358,19 +551,6 @@
     <code></code>
 
     <p></p>
-</section>
-
-
-<section id="linking">
-    <h1>Verlinkungen</h1>
-    <p></p>
-
-    <section id="citing"></section>
-
-    <section id="referencing"></section>
-
-    <section id="footnotes"></section>
-
 </section>
 
 </body>
