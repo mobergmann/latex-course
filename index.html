@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>LaTeX Learning Course</title>
+    <link rel="stylesheet" href="style.css">
 
     <!--MathJax-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -12,65 +13,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
 </head>
 <body>
-<script>
-    MathJax = {
-        tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        svg: {
-            fontCache: 'global'
-        }
-    };
-</script>
 
-<style>
-    html {
-        scroll-behavior: smooth;
-        font-family: sans-serif;
-    }
-
-    body {
-        max-width: 60rem;
-        margin: 0 auto;
-    }
-
-    header, article, section {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        padding: 1rem;
-        line-height: 175%;
-    }
-
-    section {
-        border-top: solid black 1px;
-    }
-
-    header h1, article h1, section h1 {
-        text-align: center;
-    }
-
-    code {
-        background-color: #eee;
-        border-radius: 3px;
-        font-family: courier, monospace;
-        padding: 0 3px;
-    }
-
-    pre {
-        background-color: #eee;
-        border-radius: 3px;
-        font-family: courier, monospace;
-        padding: 0 3px;
-    }
-
-    .ref {
-        text-decoration: none;
-        color: black;
-    }
-
-</style>
-
+<script src="load-mathjax.js"></script>
 
 <header id="heading">
     <h1>Willkommen zum $\LaTeX$ Kurs</h1>
@@ -86,64 +30,122 @@
             <li><a href="#">d</a></li>
             <li><a href="#">e</a></li>
         </ul>
-
-        <a class="next-section">
-            <button>Next</button>
-        </a>
     </div>
 
 </header>
 
 
-<section id="c1">
+
+<section id="latex vs word">
+    <h1>$\LaTeX$ vs. Word</h1>
+    <p></p>
+</section>
+
+
+<section id="basic syntax">
     <h1>Einführung in die $\LaTeX$ Syntax</h1>
     <p></p>
 
-    <section>
+
+    <section id="commands">
         <h1>Befehle</h1>
-        <p></p>
+        <p>
+            Damit $\LaTeX$ einen Befehl von Text unterscheiden kann müssen diese mit einem <code>\</code> Zeichen angekündigt werden. Um z.B. den Befehl <code>command</code> zu benutzen schreibt man im $\LaTeX$ Dokument <code>\command</code>.
+            <br>
+            Damit der Befehlt allerdings weiß, auf welchen Text er sich beziehen soll, wird der Text (auch Parameter genannt) mit geschweiften Klammern (<code>{}</code>) umschlossen. Daraus ergibt sich die folgende Syntax <code>\command{parameter}</code>.
+            <br>
+            Mit diesem Wissen können die meisten Befehle bereits benutzt werden, manche Befehle können allerdings auch Optionen annehmen.
+            Diese werden mit eckigen Klammern <code>[]</code> angekündigt: <code>\command[option=value, ...]{parameter}</code>, oder auch <code>\command[value, ...]{parameter}</code>.
+        </p>
+
+        <section>
+            <h1>Beispiele</h1>
+
+            <ul>
+                <li>Aus <code>\textit{Kursiver Text}</code> wird: $\textit{Kursiver Text}$</li>
+                <li>Aus <code>\textbf{Fetter Text}</code> wird: $\textbf{Fetter Text}$</li>
+                <li>Aus <code>\underline{Unterstrichener Text}</code> wird: $\underline{Unterstrichener Text}$</li>
+            </ul>
+        </section>
     </section>
 
-    <section>
-        <h1>Escaping</h1>
-        <p></p>
-    </section>
 
-    <section>
+    <section id="comments">
         <h1>Kommentare</h1>
-        <p></p>
+        <code>% Lorem Ipsum</code>
+
+        <p>
+            Wenn Sie etwas schreiben wollen, was nicht im PDF erscheinen soll, z.B. um Anmerkungen für Personen mit Bearbeitungsberechtigung an ihrem Projekt zum machen, dann können sie ein Kommentar verfassen.
+            Kommentare beginnen mit einem <code>$</code> und alles was darauf in der Zeile folgt wird vom Compiler ignoriert.
+            <br>
+            Wenn sie also <code>Hallo% Welt</code> schreiben, dann sehen sie im kompilierten PDF lediglich $Hallo% Welt$.
+        </p>
     </section>
 
-    <p>
-        Damit $\LaTeX$ einen Befehl von Text unterscheiden kann müssen diese mit einem <code>\</code> Zeichen angekündigt werden. Um z.B. den Befehl <code>command</code> zu benutzen schreibt man im $\LaTeX$ Dokument <code>\command</code>.
-        <br>
-        Damit der Befehlt allerdings weiß, auf welchen Text er sich beziehen soll, wird der Text (auch Parameter genannt) mit geschweiften Klammern (<code>{}</code>) umschlossen. Daraus ergibt sich die folgende Syntax <code>\command{parameter}</code>.
-        <br>
-        Mit diesem Wissen können die meisten Befehle bereits benutzt werden, manche Befehle können allerdings auch Optionen annehmen. Diese werden mit eckigen Klammern <code>[]</code> angekündigt: <code>\command[option=value]{parameter}</code>.
-    </p>
 
-    <div>
-        <h2>Beispiel</h2>
+    <section id="escaping">
+        <h1>Symbole escapen</h1>
+
+        <code>\& \% \$ \# \_ \{ \}</code>
+
+        <p>
+            Es kann vorkommen, dass sie Symbole benutzen wollen, welche in der $\LaTeX$ Syntax eine Bedeutung haben.
+            In dem Fall kann es hilfreich sein, wenn sie diese Symbole escapen.
+            Dafür müssen sie vor dem Symbol ein <code>\</code> Symbol schreiben.
+            <br>
+            Manchen escaped Symbole haben allerdings auch eine Bedeutung, dafür gibt es von $\LaTeX$ vordefinierte Befehle:
+        </p>
 
         <ul>
-            <li>Aus <code>\textit{Kursiver Text}</code> wird: $\textit{Kursiver Text}$</li>
-            <li>Aus <code>\textbf{Fetter Text}</code> wird: $\textbf{Fetter Text}$</li>
-            <li>Aus <code>\underline{Unterstrichener Text}</code> wird: $\underline{Unterstrichener Text}$</li>
+            <li><code>\textasciitilde</code> ergibt <code> ̃</code></li>
+            <li><code>\textasciicircum</code> ergibt <code>ˆ</code></li>
+            <li><code>\textbackslash</code> ergibt <code>\</code></li>
         </ul>
-    </div>
+    </section>
 
-    <!--TODO-->
 
-    <a class="next-section">
-        <button>Next</button>
-    </a>
+    <section id="breaks">
+        <h1>Umbrüche</h1>
+
+        <p>Das Einfügen von Zeilenumbrüchen, Seitenumbrüchen, oder auch Absätzen ist recht einfach.</p>
+
+        <section id="newline">
+            <h1>Zeilenumbruch</h1>
+
+            <code>\newline</code>
+            <code> \\</code>
+
+            <p>
+                Sie können den <code>\newline</code> Befehl für einen Zeilenumbruch verwenden, da Zeilenumbrüche allerdings sehr häufig verwendet werden wurde ein kürzerer Befehl eingefügt: <code>\\</code>. Beide Ausdrücke sind equivalent.
+            </p>
+        </section>
+
+        <section id="newpage">
+            <h1>Seitenumbruch</h1>
+
+            <code>\newpage</code>
+
+            <p>
+                Um eine neue Seite zu beginnen können sie den <code>\newpage</code> Befehl benutzen.
+            </p>
+        </section>
+
+        <section id="paragraph">
+            <h1>Absatz</h1>
+
+            <code>\par</code>
+
+            <p>
+                Wenn sie einen Absatz erzeugen wollen, dann können sie <code>\par</code> benutzen, oder aber sie lassen in Ihrem Source Code eine Zeile frei (machen ein Absatz).
+            </p>
+        </section>
+    </section>
+
 </section>
 
-<section id="c2">
-    <h1>Grundlegende Dokumenten-Struktur</h1>
-    <p>
-        Damit der Compiler ein $\LaTeX$ Dokument zu ein PDF konvertieren kann muss ein gewisses Grundgerüst vorhanden sein:
-    </p>
+
+<section id="document structure">
+    <h1>Grundlegende Dokumenten Struktur</h1>
 
     <pre><code>
 \documentclass{article}
@@ -158,66 +160,67 @@
 \maketitle
 
 \end{document}
-    </code></pre>
+        </code></pre>
 
     <p>
-        Sie müssen den Source Code mit <code>\documentclass{}</code> starten. Darauf folgen Pakete, die sie Einbinden und das setzen von Variablen, welche sie benötigen (z.B. Maketitel).
+        Jedes Dokument muss mit <code>\documentclass{}</code> starten.
+        Danach werden alle Pakete aufgelistet, welche sie einbinden möchten (siehe <ref href="packtes"/>) und als nächstes folgt das setzen von Variablen (diese werden z.B. benötigt für Maketitle).
         <br>
-        Darauf folgt der <code>\begin{document} ... \end{document}</code> Block. Hier schreiben sie den Text hinein, den sie anzeigen lassen wollen/ was sie anschließen im PDF sehen können.
+        Daraufhin folgt der Block <code>\begin{document} ... \end{document}</code>.
+        In diesem Block schreiben sie den Inhalt ihrer PDFs.
     </p>
 
-    <a class="next-section">
-        <button>Next</button>
-    </a>
-</section>
 
-<section id="c3">
-    <h1>Dokumentenklasse</h1>
 
-    <code>\documentclass[option1=value1, option2=value2]{class_name}</code>
+    <section id="documentclass">
+        <h1>Dokumentenklasse</h1>
 
-    <p>
-        In dem Beispiel aus Kapitel <a class="ref" href="#c2">2</a> wird in der ersten Zeile eine Dokumentenklasse definiert.
-        Zur Auswahl stehen <i>article</i>, <i>proc</i>, <i>minimal</i>, <i>report</i>, <i>book</i>, <i>slides</i>, <i>memoir</i>, <i>letter</i> und <i>beamer</i>.
-        Sie definieren das grundlegende Aussehen des Dokuments, für eine Liste von Klassen und eine Beschreibung der Funktion klicken sie bitte <a href="https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes">hier</a>.
-        <!--TODO implement list-->
-    </p>
+        <code>\documentclass[option1, option2]{class_name}</code>
 
-    <a class="next-section">
-        <button>Next</button>
-    </a>
-</section>
+        <p>
+            In dem Beispiel aus Kapitel <ref href="structure"/> wird in der ersten Zeile eine Dokumentenklasse definiert.
+            Zur Auswahl stehen Ihnen <i>article</i>, <i>proc</i>, <i>minimal</i>, <i>report</i>, <i>book</i>, <i>slides</i>, <i>memoir</i>, <i>letter</i> und <i>beamer</i>.
+            Das setzen dieser eines dieser Werte gibt dem Dokument eine Grundstruktur.
+            Für eine Liste der verfügbaren Werte und deren Auswirkung klicken sie bitte <a href="https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes">hier</a>.
+            <!--TODO implement list-->
+        </p>
+    </section>
 
-<section id="c4">
-    <h1>Pakete einbinden</h1>
 
-    <code>\usepackage[option1=value1, option2=value2]{package_name}</code>
+    <section id="packtes">
+        <h1>Pakete einbinden</h1>
 
-    <p>
-        Es ist möglich in $\LaTeX$ Pakete einzubinden, um gewisse Extrafunktionalitäten zu erhalten.
-        <br>
-        Ein beliebtes Beispiel ist die Funktionalität um Grafiken einzubinden.
-        Hierfür müssen Sie per Befehl $\LaTeX$ informieren, dass es das <b>graphicx</b> Paket einbinden soll. Der Befehlt wäre <code>\usepackage{graphicx}</code>.
-        <br>
-        Manche Pakete benötigen Optionen, damit sie wissen wie die Extrafunktionalität bereitgestellt werden soll.
-        Ein solches Paket haben sie bereits kennengelernt: <i>inputenc</i>, <code>\usepackage[utf8]{inputenc}</code>.
-        Das Paket sorgt dafür, dass (im Deutschen) Umlaute erkannt und verwendet werden können, bzw. alle Zeichen aus dem UTF-8 Datensatz (dies umfasst auch Indische, Chinesische, … Schriftzeichen).
-    </p>
+        <code>\usepackage[option1=value1, option2=value2]{package_name}</code>
 
-    <p>Beachten sie, dass Pakete nur vor <code>\begin{document}</code> eingebunden werden können.</p>
+        <p>
+            Es ist möglich in $\LaTeX$ Pakete einzubinden, um gewisse Extrafunktionalitäten zu erhalten.
+            Dazu gibt man vor dem <code>\begin{document}</code>, aber nach dem <code>\documentclass{article}</code> den Befehl an, welcher den Compiler zum Laden des Pakets auffordert.
+            Die Grundlegende Syntax für den Befehl ist <code>\usepackage{package_name}</code>.
+            <br>
+            Es kann vorkommen, dass ein Paket Optionen verlangt, oder Sie einer der verfügbaren Optionen des Pakets wahrnehmen möchten.
+            Dafür müssen sie die Optionen-Syntax anwenden.
+            Ein solches Paket haben sie bereits kennengelernt: <i>inputenc</i>, <code>\usepackage[utf8]{inputenc}</code>.
+            Das Paket sorgt dafür, dass unter anderem Umlaute erkannt und verwendet werden können, bzw. alle Zeichen aus dem UTF-8 Datensatz (dies umfasst auch Indische, Chinesische, … Schriftzeichen).
+            <br>
+            Ein beliebtes Beispiel ist die Funktionalität Grafiken einzubinden.
+            Hierfür müssen Sie per Befehl $\LaTeX$ informieren, dass es das <b>graphicx</b> Paket einbinden soll.
+            Der Befehlt lautet <code>\usepackage{graphicx}</code>.
+        </p>
 
-    <p>Welches Packet wie eingebunden werden muss, und welche Optionen zur Verfügung stehen müssen Sie allerdings selbstständig recherchieren.</p>
+        <p>
+            Beachten sie, dass Pakete nur vor <code>\begin{document}</code> eingebunden werden können.
+        </p>
 
-    <a class="next-section">
-        <button>Next</button>
-    </a>
-</section>
+        <p>
+            Welches Packet wie eingebunden werden muss, und welche Optionen zur Verfügung stehen müssen Sie allerdings selbstständig recherchieren.
+        </p>
+    </section>
 
-<section id="c5">
-    <h1>Maketitle</h1>
 
-<pre><code>
+    <section id="c5">
+        <h1>Maketitle</h1>
 
+        <pre><code>
 \title{Beispiel}
 \author{Max Mustermann}
 \date{August 2021}
@@ -227,49 +230,16 @@
 \maketitle
 </code></pre>
 
-    <p>
-        Um ein Titelblatt zu definieren brauchen sie kein Paket (sie benötigen Pakete, wenn sie das Aussehen des Titelblattes anpassen wollen).
-        $\LaTeX$ hat die vorgefertigt Funktion <code>\maketitle</code>, welche keine Parameter nimmt. Stattdessen müssen sie die Parameter selbst mit <code>\title{}</code>, <code>\author{}</code> und <code>\date{}</code> setzen.
-    </p>
+        <p>
+            Titelblätter werden von $\LaTeX$ direkt unterstützt (sie benötigen allerdings Pakete, wenn sie das Aussehen des Titelblattes anpassen wollen).
+            $\LaTeX$ hat die vorgefertigt Funktion <code>\maketitle</code>, welche keine Parameter nimmt. Stattdessen müssen sie die Parameter selbst mit <code>\title{}</code>, <code>\author{}</code> und <code>\date{}</code> setzen.
+        </p>
+    </section>
 
-    <a class="next-section">
-        <button>Next</button>
-    </a>
 </section>
 
-<section id="c6">
-    <h1>Umbrüche</h1>
 
-    <pre><code>
-\newline
-\\
-\newpage
-\par
-    </code></pre>
-
-    <p>Das einfügen von Seitenumbrüchen, bzw. Zeilenumbrüchen ist sehr einfach.</p>
-
-    <p>
-        Sie können <code>\newline</code> für einen Zeilenumbruch verwenden, da Zeilenumbrüche allerdings sehr häufig vorkommen wurde eine Abkürzung eingefügt: <code>\\</code>. Beide Ausdrücke sind equivalent.
-    </p>
-
-    <p>
-        Benutzen sie <code>\newpage</code> um einen Seitenumbruch zu erstellen.
-    </p>
-
-    <p>
-        Wenn sie einen Absatz erzeugen wollen, dann können sie <code>\par</code> benutzen, oder aber sie lassen in ihrme Source Code eine Zeile frei (erstellen in ihrem Source Code eine Absatz).
-    </p>
-
-
-    <p></p>
-
-    <a class="next-section">
-        <button>Next</button>
-    </a>
-</section>
-
-<section id="c7">
+<section id="math">
     <h1>Mathematik in $\LaTeX$</h1>
 
     <p>
@@ -288,111 +258,50 @@
     <code></code>
 
     <p></p>
-
-    <a class="next-section">
-        <button>Next</button>
-    </a>
 </section>
 
-<section id="">
+
+<section id="figures">
     <h1>Grafiken und Tabellen</h1>
     <p></p>
 
     <section>
         <h1>Grafiken</h1>
         <p></p>
-
-        <a class="next-section">
-            <button>Next</button>
-        </a>
     </section>
 
     <section>
         <h1>Tabellen</h1>
         <p></p>
-
-        <a class="next-section">
-            <button>Next</button>
-        </a>
     </section>
 
     <section>
         <h1>Subfigures</h1>
         <p></p>
-
-        <a class="next-section">
-            <button>Next</button>
-        </a>
     </section>
 </section>
 
-<section id="">
+
+<section id="modularisation">
     <h1>Modularisierung</h1>
 
     <code></code>
 
     <p></p>
-
-    <a class="next-section">
-        <button>Next</button>
-    </a>
 </section>
 
 
-<section>
+<section id="linking">
     <h1>Verlinkungen</h1>
     <p></p>
-</section>
 
-<section id="">
-    <h1>Zitieren</h1>
+    <section id="citing"></section>
 
-    <code></code>
+    <section id="referencing"></section>
 
-    <p></p>
-
-    <a class="next-section">
-        <button>Next</button>
-    </a>
-</section>
-
-<section id="">
-    <h1>Benutzerdefinierte Befehle</h1>
-    <p></p>
-
-    <section>
-        <h1>Benutzerdefinierte Befehle</h1>
-        <p></p>
-
-        <a class="next-section">
-            <button>Next</button>
-        </a>
-    </section>
-
-    <section>
-        <h1>Benutzerdefinierte Umgebungen</h1>
-        <p></p>
-
-        <a class="next-section">
-            <button>Next</button>
-        </a>
-    </section>
+    <section id="footnotes"></section>
 
 </section>
-
-<!--
-<section id="">
-    <h1></h1>
-
-    <code></code>
-
-    <p></p>
-
-    <a href="#c">
-        <button>Next</button>
-    </a>
-</section>
--->
 
 </body>
 </html>
