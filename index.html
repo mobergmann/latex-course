@@ -509,48 +509,106 @@
     <h1>Verlinkungen</h1>
     <p></p>
 
+    <section id="footnotes">
+        <h1>Fußnoten</h1>
+        <code>\footnote{text}</code>
+    </section>
+
     <section id="citing">
         <h1>Zitieren</h1>
+        <code>\cite{reference}</code>
     </section>
 
     <section id="referencing">
         <h1>Referenzieren</h1>
+<pre><code>
+\label{unique ref}
+...
+\ref{unique ref}
+</code></pre>
     </section>
 
-    <section id="footnotes">
-        <h1>Fußnoten</h1>
-    </section>
 
 </section>
 
 
 <section id="figures">
     <h1>Grafiken und Tabellen</h1>
-    <p></p>
+    <p>
+        Oft möchte man in seinem $\LaTeX$ Dokument Grafiken oder Tabellen einbinden.
+    </p>
 
     <section>
         <h1>Grafiken</h1>
-        <p></p>
+        <p>
+            Wenn sie Grafiken einbinden möchten, dann müssen sie das <b>graphicx</b> Paket einbinden.
+        </p>
+
+        <section>
+            <h1>Einfache Grakfik</h1>
+            <code>\includegraphics[width=0.5\textwidth]{pfad_zur_datei}</code>
+
+            <p>
+                Wenn sie ledeglich ein Bilde einfügen wollen, dann geht dies über den Befehl <code>\includegraphics</code>.
+                Als Parameter geben sie den relativen Pfad zur Datei an.
+                Die Dimensionen des Bildes können sie mit den Optionen <code>width</code> und <code>height</code> setzen.
+                Üblich ist es eine fixe Breite anzugeben, da die Höhe automatisch angepasst wird.
+                Um die Breite relativ zur Seitenbreite anzugeben benutzen sie den Befehl <code>\textwidth</code>.
+                Sie können die Breite "mutliplizieren" mit einer Zahl, die das vielfache der Bildbreite angibt (<code>0.5\textwidth</code> ist die hälfte der Seitenbreite).
+            </p>    
+        </section>
+
+        <section>
+            <h1>Grafik mit Titel</h1>
+            <pre><code>
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.5\textwidth]{path/to/image}
+    \caption{Titel des Bildes}
+    \label{fig:reference name}
+\end{figure}
+            </code></pre>
+            <p>Wenn </p>
+        </section>
+
     </section>
 
     <section>
         <h1>Tabellen</h1>
+<pre><code>
+\begin{table}[t]
+    \centering
+    \begin{tabular}{c|c}
+        Name & Klasse \\
+        Max M. & 3c \\
+        Niels & 5a \\
+        ... & ...
+    \end{tabular}
+    \caption{Titel der Tabelle}
+    \label{tab:unique table reference}
+\end{table}
+</code></pre>
+        
         <p></p>
+
     </section>
 
-    <section>
+    <!-- <section>
         <h1>Subfigures</h1>
         <p></p>
-    </section>
+    </section> -->
 </section>
 
 
 <section id="modularisation">
     <h1>Modularisierung</h1>
 
-    <code></code>
+    <code>\input{path/to/texfile}</code>
 
-    <p></p>
+    <p>
+        Sie sollten, wenn sie große Dokumente schreiben, die Texte aufteilen in mehrere Dateien.
+        Dies erhöht die Lesbarkeit und Wartbarkeit des Source Codes, und wird Ihnen viel Zeit erspaaren, wenn sie Texte wiederfinden möchten.
+    </p>
 </section>
 
 </body>
