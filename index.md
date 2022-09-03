@@ -23,16 +23,16 @@ Diese werden mit eckigen Klammern `[]` angekündigt: `\command[option=value, ...
 
 
 ## Kommentare
-```
+```latex
 % Lorem Ipsum
 ```
 
-Wenn Sie etwas schreiben wollen, was nicht im PDF erscheinen soll, z.B. um Anmerkungen für Personen mit Bearbeitungsberechtigung an ihrem Projekt zum machen, dann können sie ein Kommentar verfassen.
-Kommentare beginnen mit einem `$` und alles was darauf in der Zeile folgt wird vom Compiler ignoriert.<br>
+Wenn Sie etwas schreiben wollen, was nicht im PDF erscheinen soll, z.B. um Anmerkungen für Personen mit Bearbeitungsberechtigung an ihrem Projekt zum Machen, dann können sie ein Kommentar verfassen.
+Kommentare beginnen mit einem `$` und alles, was darauf in der Zeile folgt, wird vom Compiler ignoriert.<br>
 Wenn sie also `Hallo %Welt` schreiben, dann sehen sie im kompilierten PDF lediglich $$Hallo% Welt$$.
 
 ## Symbole escapen
-```
+```latex
 \& \% \$ \# \_ \{ \}
 ```
 
@@ -51,7 +51,7 @@ Das Einfügen von Zeilenumbrüchen, Seitenumbrüchen, oder auch Absätzen ist re
 
 ### Zeilenumbruch
 
-```
+```latex
 \newline
 \\
 ```
@@ -59,14 +59,14 @@ Das Einfügen von Zeilenumbrüchen, Seitenumbrüchen, oder auch Absätzen ist re
 Sie können den `\newline` Befehl für einen Zeilenumbruch verwenden, da Zeilenumbrüche allerdings sehr häufig verwendet werden wurde ein kürzerer Befehl eingefügt: `\\`. Beide Ausdrücke sind equivalent.
 
 ### Seitenumbruch
-```
+```latex
 \newpage
 ```
 
-Um eine neue Seite zu beginnen können sie den `\newpage` Befehl benutzen.
+Um eine neue Seite zu beginnen, können sie den `\newpage` Befehl benutzen.
 
 ### Absatz
-```
+```latex
 \par
 ```
 
@@ -74,7 +74,7 @@ Wenn sie einen Absatz erzeugen wollen, dann können sie `\par` benutzen, oder ab
 
 
 ## Grundlegende Dokumenten Struktur
-```
+```latex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 
@@ -90,13 +90,13 @@ Wenn sie einen Absatz erzeugen wollen, dann können sie `\par` benutzen, oder ab
 ```
 
 Jedes Dokument muss mit `\documentclass{}` starten.
-Danach werden alle Pakete aufgelistet, welche sie einbinden möchten (siehe <ref href="packtes"/>) und als nächstes folgt das setzen von Variablen (diese werden z.B. benötigt für Maketitle).<br>
+Danach werden alle Pakete aufgelistet, welche sie einbinden möchten (siehe <ref href="packtes"/>) und als Nächstes folgt das Setzen von Variablen (diese werden z.B. benötigt für Maketitle).<br>
 Daraufhin folgt der Block `\begin{document} ... \end{document}`.
 In diesem Block schreiben sie den Inhalt ihrer PDFs.
 
 
 ## Dokumentenklasse
-```
+```latex
 \documentclass[option1, option2]{class_name}
 ```
 
@@ -107,13 +107,13 @@ Für eine Liste der verfügbaren Werte und deren Auswirkung klicken sie bitte <a
 <!--TODO implement list-->
 
 ## Pakete einbinden
-```
+```latex
 \usepackage[option1=value1, option2=value2]{package_name}
 ```
 
 Es ist möglich in $$ \LaTeX $$ Pakete einzubinden, um gewisse Extrafunktionalitäten zu erhalten.
 Dazu gibt man vor dem `\begin{document}`, aber nach dem `\documentclass{article}` den Befehl an, welcher den Compiler zum Laden des Pakets auffordert.
-Die Grundlegende Syntax für den Befehl ist `\usepackage{package_name}`.<br>
+Die grundlegende Syntax für den Befehl ist `\usepackage{package_name}`.<br>
 Es kann vorkommen, dass ein Paket Optionen verlangt, oder Sie einer der verfügbaren Optionen des Pakets wahrnehmen möchten.
 Dafür müssen sie die Optionen-Syntax anwenden.
 Ein solches Paket haben sie bereits kennengelernt: *inputenc*, `\usepackage[utf8]{inputenc}`.
@@ -128,7 +128,7 @@ Welches Packet wie eingebunden werden muss, und welche Optionen zur Verfügung s
 
 
 ## Maketitle
-```
+```latex
 \title{Beispiel}
 \author{Max Mustermann}
 \date{August 2021}
@@ -151,7 +151,7 @@ Wenn sie etwas in dieser Schreibweise schreiben, wird dies Mathe-Modus genannt.<
 Wollen sie z.B. <code>a+b=c</code> darstellen, dann schreiben sie <code>$a+b=c$</code> (das ergibt $a+b=c$).
 
 #### Index
-```
+```latex
 a_1
 ```
 
@@ -163,11 +163,11 @@ Möchten sie einen Index machen, welcher mehr als ein Zeichen umfasst, so könne
 Es ist möglich fast allen Symbolen einen Index zu geben, sogar mehrfache Indexierungen sind möglich: <code>$a_1_2$</code> wird zu $a_{1_2}$.
 
 #### Potenzen
-```
+```latex
 a^b
 ```
 
-Um Potenzen darzustellen können sie einfach die Basis konkatenieren mit dem <code>^</code> Zeichen gefolgt von der Potenz.
+Um Potenzen darzustellen, können sie einfach die Basis konkatenieren mit dem <code>^</code> Zeichen gefolgt von der Potenz.
 
 
 Möchten sie eine Potenz aus mehreren Zeichen machen, dann müssen sie diese in geschweiften klammern schreiben: <code>$a^{bc}$</code> wird zu $a^{bc}$.
@@ -175,7 +175,7 @@ Möchten sie eine Potenz aus mehreren Zeichen machen, dann müssen sie diese in 
 Wollen sie eine mehrfache Potenz darstellen, dann umklammern sie immer die tiefste Potenz: <code>$a^{b^c}$</code> wird zu $a^{b^c}$.
 
 #### Brüche
-```
+```latex
 \frac{a}{b}
 ```
 
@@ -186,17 +186,17 @@ Dazu schreiben sie einfach in den Zähler/ Nenner den weiteren Bruch: <code>$\fr
 ## Erweiterte Syntax
 Die einfache Mathematik kann mit den Symbolen dargestellt werden, die sie auf der Tastatur schreiben können.
 Wollen Sie allerdings erweiterte Symbole benutzen gibt es von $\LaTeX$ vordefinierte Befehle.
-Bitte beachten sie, dass diese Befehle <mark>nur im Mathe-Modus verwendet werden können</mark>.
+Bitte beachten Sie, dass diese Befehle <mark>nur im Mathe-Modus verwendet werden können</mark>.
 
 ### Mengen
-```
+```latex
 M := \{ 1, 2, 3, 4 \}
 ```
 
 Eine Menge kann recht einfach mit den Standardsymbolen dargestellt werden.
 
 #### Mengenoperationen
-```
+```latex
 \cup
 \cap
 \subset
@@ -222,7 +222,7 @@ Eine Tabelle aller Mengenoperationen kann <a href="https://de.wikipedia.org/wiki
 
 
 ### Summe
-```
+```latex
 \sum_{lower}^{upper} i
 ```
 
@@ -230,7 +230,7 @@ Summen können mit dem <code>$\sum_{i=1}^{n} i$</code> Befehl erzeugt werden.
 Kombinieren sie einfach den Index als untere Grenze mit einer Potenz als obere Grenze $\sum_{i=1}^{n} i$
 
 ### Produkt
-```
+```latex
 \prod_{lower}^{upper}
 ```
 
@@ -238,7 +238,7 @@ Produkte können mit dem <code>$\prod_{i=1}^{n} i$</code> Befehl erzeugt werden.
 Kombinieren sie einfach den Index als untere Grenze mit einer Potenz als obere Grenze $\prod_{i=1}^{n} i$
 
 ### Integrale
-```
+```latex
 \int_{lower}^{upper}
 ```
 
@@ -248,7 +248,7 @@ Kombinieren sie einfach den Index als untere Grenze mit einer Potenz als obere G
 ### Matrix
 **amsmath**
 
-```
+```latex
 \begin{pmatrix}
     a_{0,0} & a_{0,1} & a_{0,2} \\
     a_{1,0} & a_{1,1} & a_{1,2}
@@ -257,10 +257,10 @@ Kombinieren sie einfach den Index als untere Grenze mit einer Potenz als obere G
 
 Um Matrizen benutzen zu können müssen sie das <b>amsmath</b> Paket laden.
 Danach können sie mit dem Block <code>}\$begin{matrix} ... \end{matrix}</code> ihre Matrix definieren.
-Schreiben sie in den Block die Werte für die Matrix Zeilenweise.
-Fügen sie ans Ende einer Zeile einen Zeilenumbruch und trennen sie die Werte mit <code>&</code> Zeichen.
+Schreiben Sie in den Block die Werte für die Matrix Zeilenweise.
+Fügen Sie ans Ende einer Zeile einen Zeilenumbruch und trennen sie die Werte mit <code>&</code> Zeichen.
 
-<p>Es Gibt mehrere Arten von Matrizen:</p>
+<p>Es gibt mehrere Arten von Matrizen:</p>
 <table>
     <thead>
         <th>Name</th>
@@ -313,17 +313,17 @@ Fügen sie ans Ende einer Zeile einen Zeilenumbruch und trennen sie die Werte mi
 
 ## Verlinkungen
 ### Fußnoten
-```
+```latex
 \footnote{text}
 ```
 
 ### Zitieren
-```
+```latex
 \cite{reference}
 ```
 
 ### Referenzieren
-```
+```latex
 \label{unique ref}
 ...
 \ref{unique ref}
@@ -337,20 +337,20 @@ Oft möchte man in seinem $\LaTeX$ Dokument Grafiken oder Tabellen einbinden.
 Wenn sie Grafiken einbinden möchten, dann müssen sie das <b>graphicx</b> Paket einbinden.
 
 ### Einfache Grakfik
-```
+```latex
 \includegraphics[width=0.5\textwidth]{pfad_zur_datei}
 ```
 
-Wenn sie ledeglich ein Bilde einfügen wollen, dann geht dies über den Befehl <code>\includegraphics</code>.
+Wenn sie ledeglich ein Bild einfügen wollen, dann geht dies über den Befehl <code>\includegraphics</code>.
 Als Parameter geben sie den relativen Pfad zur Datei an.
 Die Dimensionen des Bildes können sie mit den Optionen <code>width</code> und <code>height</code> setzen.
 Üblich ist es eine fixe Breite anzugeben, da die Höhe automatisch angepasst wird.
-Um die Breite relativ zur Seitenbreite anzugeben benutzen sie den Befehl <code>\textwidth</code>.
-Sie können die Breite "mutliplizieren" mit einer Zahl, die das vielfache der Bildbreite angibt (<code>0.5\textwidth</code> ist die hälfte der Seitenbreite).
+Um die Breite relativ zur Seitenbreite anzugeben, benutzen sie den Befehl <code>\textwidth</code>.
+Sie können die Breite "multiplizieren" mit einer Zahl, die das Vielfache der Bildbreite angibt (<code>0.5\textwidth</code> ist die hälfte der Seitenbreite).
 
 
 ### Grafik mit Titel
-```
+```latex
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.5\textwidth]{path/to/image}
@@ -360,7 +360,7 @@ Sie können die Breite "mutliplizieren" mit einer Zahl, die das vielfache der Bi
 ```
 
 ## Tabellen
-```
+```latex
 \begin{table}[t]
     \centering
     \begin{tabular}{c|c}
@@ -379,9 +379,9 @@ Sie können die Breite "mutliplizieren" mit einer Zahl, die das vielfache der Bi
 -->
 
 ## Modularisierung
-```
+```latex
 \input{path/to/texfile}
 ```
 
 Sie sollten, wenn sie große Dokumente schreiben, die Texte aufteilen in mehrere Dateien.
-Dies erhöht die Lesbarkeit und Wartbarkeit des Source Codes, und wird Ihnen viel Zeit erspaaren, wenn sie Texte wiederfinden möchten.
+Dies erhöht die Lesbarkeit und Wartbarkeit des Source Codes, und wird Ihnen viel Zeit ersparen, wenn sie Texte wiederfinden möchten.
