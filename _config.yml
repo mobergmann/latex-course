@@ -8,9 +8,14 @@ github_username:  mobergmann
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: "just-the-docs"
+remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-feed
+
+# Theme settings
+search_enabled: false
+color_scheme: dark
 
 # Exclude from processing.
 exclude:
