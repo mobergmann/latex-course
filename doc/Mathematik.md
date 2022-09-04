@@ -4,6 +4,16 @@ title: Mathematik
 nav_order: 10
 ---
 
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+
 # Mathematik
 LaTeX bietet viele Features, um komplizierte mathematische Formeln gut darzustellen.
 Dies ist auch der Hauptgrund, warum viele LaTeX überhaupt verwenden.
