@@ -1,113 +1,177 @@
 ---
 layout: default
 title: Mathematik
-nav_order: 9
+nav_order: 10
 ---
 
 # Mathematik
+LaTeX bietet viele Features, um komplizierte mathematische Formeln gut darzustellen.
+Dies ist auch der Hauptgrund, warum viele LaTeX überhaupt verwenden.
+
 
 ## Einfache Syntax
-Damit sie Formeln, oder Rechnungen in $$ \LaTeX $$ schreiben können müssen sie diese lediglich mit <code>$</code> Zeichen ummanteln.
+Damit sie Formeln, oder Rechnungen in LaTeX schreiben können **müssen** sie diese mit `$` Zeichen umgeben.
 Wenn sie etwas in dieser Schreibweise schreiben, wird dies Mathe-Modus genannt.<br>
-Wollen sie z.B. <code>a+b=c</code> darstellen, dann schreiben sie <code>$a+b=c$</code> (das ergibt $a+b=c$).
+Wollen sie z.B. `a+b=c` schreiben, dann schreiben sie `$a+b=c$`, das ergibt $$a+b=c$$.
+
 
 ### Index
 ```latex
-a_1
+a_{b}
 ```
+$$
+a_{b}
+$$
 
-Wenn sie ein Index verwenden wollen, dann können sie dies mit dem <code>_</code> zeichen erreichen: <code>$a_1$</code> wird zu $a_1$.
+Indexe können dargestellt werden, indem man an der Variable ein `_` schreibt, gefolgt von dem Index in geschweiften Klammern.
 
+#### Index von Rechnungen
+```latex
+a_{b+c}
+```
+$$
+a_{b+c}
+$$
 
-Möchten sie einen Index machen, welcher mehr als ein Zeichen umfasst, so können sie den Index mit geschweiften Klammern gruppieren: <code>$a_{2a}$</code> wird zu $a_{2a}$.
+Rechnungen in Indexe können dargestellt werden, indem man einfach die Rechnung in die geschweiften Klammern schreibt.
 
-Es ist möglich fast allen Symbolen einen Index zu geben, sogar mehrfache Indexierungen sind möglich: <code>$a_1_2$</code> wird zu $a_{1_2}$.
+#### Index eines Indexes
+```latex
+a_{b_{c}}
+```
+$$
+a_{b_{c}}
+$$
+
+Ein Index eines Indexes, usw kann darstellt werden, indem man in den geschweiften Klammern ein weiteren Index einfügt.
+
 
 ### Potenzen
 ```latex
-a^b
+a^{b}
 ```
+$$
+a^{b}
+$$
 
-Um Potenzen darzustellen, können sie einfach die Basis konkatenieren mit dem <code>^</code> Zeichen gefolgt von der Potenz.
+Potenzen können dargestellt werden, indem man die Basis gefolgt von einem `^`, wiederrum gefolgt von der Potenz in geschweiften Klammern darstellt.
+
+#### Potenz von Rechnungen
+```latex
+a^{b+c}
+```
+$$
+a^{b+c}
+$$
+
+Für eine Potenz aus mehreren Zeichen schreibt man einfach die Rechnung in die geschweiften Klammern.
+
+#### Potenz einer Potenz
+```latex
+a^{b^{c}}
+```
+$$
+a^{b^{c}}
+$$
+
+Eine Potenz einer Potenz, usw kann darstellt werden, indem man in den geschweiften Klammern eine weitere Potenz einfügt.
 
 
-Möchten sie eine Potenz aus mehreren Zeichen machen, dann müssen sie diese in geschweiften klammern schreiben: <code>$a^{bc}$</code> wird zu $a^{bc}$.
-
-Wollen sie eine mehrfache Potenz darstellen, dann umklammern sie immer die tiefste Potenz: <code>$a^{b^c}$</code> wird zu $a^{b^c}$.
-
-### Brüche
+### Bruch
 ```latex
 \frac{a}{b}
 ```
+$$
+\frac{a}{b}
+$$
 
-Sie können Brüche darstellen durch den Befehl <code>$\frac{a}{b}$</code> (das ergibt $\frac{a}{b}$).<br>
-Sie können auch n-fache Brüche darstellen.
-Dazu schreiben sie einfach in den Zähler/ Nenner den weiteren Bruch: <code>$\frac{c}{\frac{a}{b}}$</code> ergibt $\frac{c}{\frac{a}{b}}$.
+Brüche können durch den Befehl `frac` dargestellt werden.
+Als ersten Parameter übergibt man den Zähler und als zweiten Parameter den Nenner.
 
-## Erweiterte Syntax
-Die einfache Mathematik kann mit den Symbolen dargestellt werden, die sie auf der Tastatur schreiben können.
-Wollen Sie allerdings erweiterte Symbole benutzen gibt es von $\LaTeX$ vordefinierte Befehle.
-Bitte beachten Sie, dass diese Befehle <mark>nur im Mathe-Modus verwendet werden können</mark>.
+#### N-Fache Brüche
+```latex
+\frac{c}{\frac{a}{b}}
+```
+$$
+\frac{c}{\frac{a}{b}}
+$$
+
+Du kannst auch Brüche von Brüchen darstellen, usw.
+Schreib dazu in den Zähler und/ oder Nenner den weiteren Bruch.
+
 
 ### Mengen
 ```latex
 M := \{ 1, 2, 3, 4 \}
 ```
+$$
+M := \{ 1, 2, 3, 4 \}
+$$
 
-Eine Menge kann recht einfach mit den Standardsymbolen dargestellt werden.
-
-#### Mengenoperationen
-```latex
-\cup
-\cap
-\subset
-```
-
-Mengenoperationen sind ebenfalls in $\LaTeX$ definiert.
-
-| Name               | Befehl       | Symbol          |
-|--------------------|--------------|-----------------|
-| Leere Menge        | `\emptyset`  | $$ \emptyset $$ |
-| Mit `              | `\mid`       | $$ \mid $$      |
-| Vereinigungsmenge  | `\cup`       | $$ \cup $$      |
-| Schnittmenge       | `\cap`       | $$ \cap $$      |
-| Differenzmenge     | `\setminus`  | $$ \setminus $$ |
-| Teilmenge          | `\subset`    | $$ \subset $$   |
-| Obermenge          | `\supset`    | $$ \supset $$   |
-| Element            | `\in`        | $$ \in $$       |
-| Nicht Element      | `\notin`     | $$ \notin $$    |
+Eine Menge kann recht einfach mit den Standardsymbolen dargestellt werden, indem man die geschweiften Klammern [escaped](./Escape).
 
 
-Eine Tabelle aller Mengenoperationen kann <a href="https://de.wikipedia.org/wiki/Liste_mathematischer_Symbole#Mengenlehre">hier</a> gefunden werden.
+## Erweiterte Syntax
+Die einfache Mathematik kann mit den Symbolen dargestellt werden, die man auf der Tastatur findet.
+Möchte man allerdings erweiterte Symbole benutzen, gibt es von LaTeX vordefinierte Befehle.
+Bitte beachten, dass diese Befehle nur **im Mathe-Modus verwendet werden können**.
+
+
+### Mengenoperationen
+Mengenoperationen sind ebenfalls in LaTeX definiert.
+
+| Name              | Befehl      | Symbol          |
+|-------------------|-------------|-----------------|
+| Leere Menge       | `\emptyset` | $$ \emptyset $$ |
+| Mit               | `\mid`      | $$ \mid $$      |
+| Vereinigungsmenge | `\cup`      | $$ \cup $$      |
+| Schnittmenge      | `\cap`      | $$ \cap $$      |
+| Differenzmenge    | `\setminus` | $$ \setminus $$ |
+| Teilmenge         | `\subset`   | $$ \subset $$   |
+| Obermenge         | `\supset`   | $$ \supset $$   |
+| Element           | `\in`       | $$ \in $$       |
+| Nicht Element     | `\notin`    | $$ \notin $$    |
+
+Eine Tabelle aller Mengenoperationen kann [hier](https://de.wikipedia.org/wiki/Liste_mathematischer_Symbole#Mengenlehre) gefunden werden.
 
 
 ### Summe
 ```latex
 \sum_{lower}^{upper} i
 ```
+$$
+\sum_{i=1}^{n} i
+$$
 
-Summen können mit dem <code>$\sum_{i=1}^{n} i$</code> Befehl erzeugt werden.
-Kombinieren sie einfach den Index als untere Grenze mit einer Potenz als obere Grenze $\sum_{i=1}^{n} i$
+Summen können mit dem `sum` Befehl erzeugt werden.
+Kombiniere einfach den Index als untere Grenze mit einer Potenz als obere Grenze und setze das, worauf sich die Summe bezieht, nach dem Befehl.
+
 
 ### Produkt
 ```latex
 \prod_{lower}^{upper}
 ```
+$$
+\prod_{i=1}^{n} i
+$$
 
-Produkte können mit dem <code>$\prod_{i=1}^{n} i$</code> Befehl erzeugt werden.
-Kombinieren sie einfach den Index als untere Grenze mit einer Potenz als obere Grenze $\prod_{i=1}^{n} i$
+Produkte können mit dem `prod` Befehl erzeugt werden.
+Kombiniere einfach den Index als untere Grenze mit einer Potenz als obere Grenze und setze das, worauf sich das Produkt bezieht, nach dem Befehl.
+
 
 ### Integrale
 ```latex
 \int_{lower}^{upper}
 ```
+$$
+\int_{i=1}^{n} i
+$$
 
-Integrale können mit dem <code>$\int_{i=1}^{n} i$</code> Befehl erzeugt werden.
-Kombinieren sie einfach den Index als untere Grenze mit einer Potenz als obere Grenze $\prod_{i=1}^{n} i$
+Integrale können mit dem `int` Befehl erzeugt werden.
+Kombiniere einfach den Index als untere Grenze mit einer Potenz als obere Grenze und setze das, worauf sich das Integral bezieht, nach dem Befehl.
+
 
 ### Matrix
-**amsmath**
-
 ```latex
 \begin{pmatrix}
     a_{0,0} & a_{0,1} & a_{0,2} \\
@@ -115,58 +179,15 @@ Kombinieren sie einfach den Index als untere Grenze mit einer Potenz als obere G
 \end{pmatrix}
 ```
 
-Um Matrizen benutzen zu können müssen sie das <b>amsmath</b> Paket laden.
-Danach können sie mit dem Block <code>}\$begin{matrix} ... \end{matrix}</code> ihre Matrix definieren.
-Schreiben Sie in den Block die Werte für die Matrix Zeilenweise.
-Fügen Sie ans Ende einer Zeile einen Zeilenumbruch und trennen sie die Werte mit <code>&</code> Zeichen.
+Um Matrizen benutzen zu können muss das **amsmath** Paket geladen werden.
 
-<p>Es gibt mehrere Arten von Matrizen:</p>
-<table>
-    <thead>
-        <th>Name</th>
-        <th>Code</th>
-        <th>Ergebnis</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Parentheses</td>
-            <td><code>\begin{pmatrix}</code></td>
-            <td>$\begin{pmatrix}
-                    a_{0,0} & a_{0,1} & a_{0,2} \\
-                    a_{1,0} & a_{1,1} & a_{1,2}
-                \end{pmatrix}$</td>
-        </tr>
-        <tr>
-            <td>Brackets</td>
-            <td><code>\begin{bmatrix}</code></td>
-            <td>$\begin{bmatrix}
-                a_{0,0} & a_{0,1} & a_{0,2} \\
-                a_{1,0} & a_{1,1} & a_{1,2}
-                \end{bmatrix}$</td>
-        </tr>
-        <tr>
-            <td>Braces</td>
-            <td><code>\begin{Bmatrix}</code></td>
-            <td>$\begin{Bmatrix}
-                a_{0,0} & a_{0,1} & a_{0,2} \\
-                a_{1,0} & a_{1,1} & a_{1,2}
-                \end{Bmatrix}$</td>
-        </tr>
-        <tr>
-            <td>Pipes</td>
-            <td><code>\begin{vmatrix}</code></td>
-            <td>$\begin{vmatrix}
-                a_{0,0} & a_{0,1} & a_{0,2} \\
-                a_{1,0} & a_{1,1} & a_{1,2}
-                \end{vmatrix}$</td>
-        </tr>
-        <tr>
-            <td>Double pipes</td>
-            <td><code>\begin{Vmatrix}</code></td>
-            <td>$\begin{Vmatrix}
-                a_{0,0} & a_{0,1} & a_{0,2} \\
-                a_{1,0} & a_{1,1} & a_{1,2}
-                \end{Vmatrix}$</td>
-        </tr>
-    </tbody>
-</table>
+Danach kann mit dem Enviroment `\begin{matrix} ... \end{matrix}` eine Matrix definiert werden.
+Ähnlich wie bei [Tabellen](./Tabellen) werden die Einträge durch `&` Zeichen getrennt und das Ende einer Zeile wird mit einem [Zeilenumbruch](./Umbrüche#zeilenumbruch) gekennzeichnet.
+
+| Name         | Code              |                                            Ergebnis                                            |
+|--------------|-------------------|:----------------------------------------------------------------------------------------------:|
+| Parentheses  | `\begin{pmatrix}` | $$ \begin{pmatrix}a_{0,0} & a_{0,1} & a_{0,2} \\ a_{1,0} & a_{1,1} & a_{1,2} \end{pmatrix} $$  |
+| Brackets     | `\begin{bmatrix}` | $$ \begin{bmatrix} a_{0,0} & a_{0,1} & a_{0,2} \\ a_{1,0} & a_{1,1} & a_{1,2} \end{bmatrix} $$ |
+| Braces       | `\begin{Bmatrix}` | $$ \begin{Bmatrix} a_{0,0} & a_{0,1} & a_{0,2} \\ a_{1,0} & a_{1,1} & a_{1,2} \end{Bmatrix} $$ |
+| Pipes        | `\begin{vmatrix}` | $$ \begin{vmatrix} a_{0,0} & a_{0,1} & a_{0,2} \\ a_{1,0} & a_{1,1} & a_{1,2} \end{vmatrix} $$ |
+| Double pipes | `\begin{Vmatrix}` | $$ \begin{Vmatrix} a_{0,0} & a_{0,1} & a_{0,2} \\ a_{1,0} & a_{1,1} & a_{1,2} \end{Vmatrix} $$ |

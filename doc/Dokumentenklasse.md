@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Dokumentenklasse
-nav_order: 8
+nav_order: 6
 ---
 
 # Dokumentenklasse
@@ -9,9 +9,18 @@ nav_order: 8
 \documentclass[option1, option2]{class_name}
 ```
 
-In dem Beispiel aus Kapitel <ref href="structure"/> wird in der ersten Zeile eine Dokumentenklasse definiert.
-Zur Auswahl stehen Ihnen <i>article</i>, <i>proc</i>, <i>minimal</i>, <i>report</i>, <i>book</i>, <i>slides</i>, <i>memoir</i>, <i>letter</i> und <i>beamer</i>.
-Das setzen dieser eines dieser Werte gibt dem Dokument eine Grundstruktur.
-Für eine Liste der verfügbaren Werte und deren Auswirkung klicken sie bitte <a href="https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes">hier</a>.
+Eine Dokumentenklasse definiert wie das Dokument aussehen soll, welche Pakete vordefiniert eingebunden werden und vieles weitere.
 
-<!--TODO implement list-->
+Zur Auswahl stehen:
+- article
+- proc
+- minimal
+- report
+- book
+- slides
+- memoir
+- letter
+- beamer
+
+Standardmäßig nutzt man wahrscheinlich einfach _article_.
+Wenn du dich weiter einlesen möchtest, dann findest du eine ausführliche Liste der Classes und deren Auswirkung [hier](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes).

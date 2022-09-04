@@ -9,11 +9,15 @@ nav_order: 3
 \& \% \$ \# \_ \{ \}
 ```
 
-Es kann vorkommen, dass sie Symbole benutzen wollen, welche in der $$ \LaTeX $$ Syntax eine Bedeutung haben.
-In dem Fall kann es hilfreich sein, wenn sie diese Symbole escapen.
-Dafür müssen sie vor dem Symbol ein `\` Symbol schreiben.<br>
-Manchen escaped Symbole haben allerdings auch eine Bedeutung, dafür gibt es von $$ \LaTeX $$ vordefinierte Befehle:
+In dem vorherigen Kapitel haben wir das `%` Zeichen als Kommentar kennengelernt.
+Dieses Zeichen macht es sehr einfach Kommentare zu verfassen, möchte man aber wirklich ein `%` Zeichen schreiben, dann muss man das Zeichen erst escapen.
+Es gibt mehrere Zeichen, die in LaTeX eine Bedeutung haben. Diese müssen alle Escaped werden.
 
+In der Regel escapen wir einfach, indem wir ein `\` vor dem gewünschten Zeichen setzen.
+Z.B. wenn wir ein `%` escapen wollen, dann machen wir daraus einfach `\%`.
+
+Manche Symbole haben aber, wenn sie escaped werden auch eine Bedeutung.
+Dafür gibt es dann die folgenden Befehle:
 - `\textasciitilde` ergibt `~`
 - `\textasciicircum` ergibt `ˆ`
 - `\textbackslash` ergibt `\`

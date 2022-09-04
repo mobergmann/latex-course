@@ -6,8 +6,10 @@ nav_order: 13
 
 # Modularisierung
 ```latex
-\input{path/to/texfile}
+\input{path/to/file}
 ```
 
-Sie sollten, wenn sie große Dokumente schreiben, die Texte aufteilen in mehrere Dateien.
-Dies erhöht die Lesbarkeit und Wartbarkeit des Source Codes, und wird Ihnen viel Zeit ersparen, wenn sie Texte wiederfinden möchten.
+Wenn du große Dokumente schreibst, dann kannst und solltest du dein Dokument in mehrere Dateien aufteilen.
+Dies erhöht die Lesbarkeit für dich und man kann schneller Dinge wiederfinden, wodurch man auch schneller den Text bearbeiten kann.
+
+Du musst einfach eine Weitere LaTeX Datei anlegen und diese mit `\input{path/to/texfile}` einfügen.
