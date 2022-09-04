@@ -2,9 +2,9 @@ title: Latex Course
 email: mobergmann@pm.me
 description: >-
   Noch eine Website, die versucht einem einfach und schnell Latex beizubringen.
-baseurl: ""
-url: "https://mobergmann.github.io/latex-course/"
-github_username:  mobergmann
+#baseurl: ""
+#url: "https://mobergmann.github.io/latex-course/"
+github_username: mobergmann
 
 # Build settings
 markdown: kramdown
